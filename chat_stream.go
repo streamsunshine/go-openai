@@ -44,12 +44,20 @@ type PromptFilterResult struct {
 	ContentFilterResults ContentFilterResults `json:"content_filter_results,omitempty"`
 }
 
+type Link struct {
+	Index int32  `json:"index"`
+	Icon  string `json:"icon"`
+	URL   string `json:"url"`
+	Title string `json:"title"`
+}
+
 type ChatCompletionStreamResponse struct {
 	ID                  string                       `json:"id"`
 	Object              string                       `json:"object"`
 	Created             int64                        `json:"created"`
 	Model               string                       `json:"model"`
 	Choices             []ChatCompletionStreamChoice `json:"choices"`
+	Links               []Link                       `json:"links,omitempty"`
 	SystemFingerprint   string                       `json:"system_fingerprint"`
 	PromptAnnotations   []PromptAnnotation           `json:"prompt_annotations,omitempty"`
 	PromptFilterResults []PromptFilterResult         `json:"prompt_filter_results,omitempty"`

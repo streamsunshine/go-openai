@@ -367,6 +367,7 @@ type ChatCompletionResponse struct {
 	Created             int64                  `json:"created"`
 	Model               string                 `json:"model"`
 	Choices             []ChatCompletionChoice `json:"choices"`
+	Links               []Link                 `json:"links,omitempty"`
 	Usage               Usage                  `json:"usage"`
 	SystemFingerprint   string                 `json:"system_fingerprint"`
 	PromptFilterResults []PromptFilterResult   `json:"prompt_filter_results,omitempty"`
